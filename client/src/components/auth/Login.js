@@ -105,7 +105,7 @@ class Login extends Component {
               <div className="col s12" style={{ paddingLeft: "11.250px" }}>
                 <button
                   style={{
-                    width: "150px",
+                    width: "auto",
                     borderRadius: "3px",
                     letterSpacing: "1.5px",
                     marginTop: "1rem"

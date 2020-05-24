@@ -10,13 +10,16 @@ module.exports = function validateLoginInput(data) {
 
   // Email checks
   if (Validator.isEmpty(data.email)) {
-    errors.email = "Email field is required";
+    errors.email = "Pole adres e-mail jest wymagane";
   } else if (!Validator.isEmail(data.email)) {
-    errors.email = "Email is invalid";
+    errors.email = "E-mail jest nieprawidłowy";
   }
   // Password checks
   if (Validator.isEmpty(data.password)) {
-    errors.password = "Password field is required";
+    errors.password = "Pole hasło jest wymagane";
+  }
+  if (!Validator.isLength(data.password, { min: 6, max: 30 })) {
+    errors.password = "Hasło musi posiadać co najmniej 6 znaków";
   }
 
   return {
